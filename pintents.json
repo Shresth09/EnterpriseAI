@@ -1,0 +1,72 @@
+{"intents": [
+        {"tag": "shoes",
+         "patterns": ["shoes", "mens shoes", "running shoes", "sports shoes"],
+         "responses": ["https://www.bing.com/shop?q=shoes&FORM=SHOPTB"],
+         "context_set": ""
+        },
+        {"tag": "toy",
+         "patterns": ["toy", "kids", "kids toy", "game", "plaything"],
+         "responses": ["https://www.bing.com/shop?q=toy&qs=n&form=SHOPSB&sp=-1&pq=toy&sc=8-3&sk=&cvid=C9BFA3C551894D48867C3B823C7ED9EE"],
+         "context_set": ""
+        },
+        
+        {"tag": "grocery",
+         "patterns": ["goods","fmcg","foodstuff","grocery"],
+         "responses": ["https://www.bing.com/shop?q=grocery&qs=WebSearch&form=SHOPSB&sp=3&pq=groc&sc=8-4&sk=&cvid=5D88AE95A275403F8573E56EC828A12B"],
+         "context_set": ""
+        },
+
+
+        
+        {"tag": "mobile",
+         "patterns": ["mobile","phone","mobile phone"],
+         "responses": ["https://www.bing.com/shop?q=mobile+phone&qs=WebSearch&form=SHOPSB&sp=1&pq=mobile&sc=8-6&sk=&cvid=1D2CBDFCC8E149429830950D5B5511FB"],
+         "context_set": ""
+        },
+
+
+       
+        {"tag": "gift",
+         "patterns": ["gift","giveaway"," present"],
+         "responses": ["https://www.bing.com/shop?q=gift&qs=n&form=SHOPSB&sp=-1&pq=gift&sc=8-4&sk=&cvid=832D817ED44F42BE80221AAEF445796C"],
+         "context_set": ""
+        },
+
+
+        {"tag": "book",
+         "patterns": ["book","books","novel","fiction","fiction novel"],
+         "responses": ["https://www.bing.com/shop?q=books&qs=WebSearch&form=SHOPSB&sp=1&pq=bo&sc=8-2&sk=&cvid=F119DDBBF1414C1DA981BB4608F2AC70"],
+         "context_set": ""
+        },
+
+
+        {"tag": "laptop",
+         "patterns": ["laptop","computer","personal computer","macbook","palmtop"],
+         "responses": ["https://www.bing.com/shop?q=macbook&qs=n&form=SHOPSB&sp=-1&pq=macbook&sc=8-7&sk=&cvid=D76E1FB739FD4C21A6CF3294357C1B6C"],
+         "context_set": ""
+        },
+
+
+        {"tag": "air conditioner",
+         "patterns": ["air conditioner","ac","warm","humidity","humidity","hot","season"],
+         "responses": ["https://www.bing.com/shop?q=air+conditioner&qs=WebSearch&form=SHOPSB&sp=1&pq=air+c&sc=8-5&sk=&cvid=E54B69F913B84F0FA966F7CA393474DB"],
+         "context_set": ""
+        },
+
+
+        {"tag": "mug",
+         "patterns": ["coffee","mug","coffee mug"],
+         "responses": ["https://www.bing.com/shop?q=coffee+mugs&qs=WebSearch&form=SHOPSB&sp=1&pq=coffee+mu&sc=8-9&sk=&cvid=809889131EDC4268ABFD22F63E735849"],
+         "context_set": ""
+        },
+
+
+
+        {"tag": "helmet",
+         "patterns": ["helmet","bike helmet","safty"],
+         "responses": ["https://www.bing.com/shop?q=helmet&qs=WebSearch&form=SHOPSB&sp=1&pq=helme&sc=8-5&sk=&cvid=D06E521B8C324441B5CD65B336189E9A"],
+         "context_set": ""
+        }
+
+   ]
+}

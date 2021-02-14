@@ -1,0 +1,133 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up","Hey !","Hii","hello"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day","bye","see you soon"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye! I'll be waiting for you."],
+         "context_set": ""
+        },
+        
+        {"tag": "friend",
+         "patterns": ["will you be my friend","friends ??","can we be friends"],
+         "responses": ["let's chat first and see if we can be friends.","See, I am not programmed to make friends, LOL we're already friends.","Sorry, I am not on Facebook !"],
+         "context_set": ""
+        },
+
+
+        
+        {"tag": "memory",
+         "patterns": ["your memory","your worst memory","your horrible memory"],
+         "responses": ["If you are treating me as a human, then my worst memory is when my servers crashed."],
+         "context_set": ""
+        },
+
+
+       
+        {"tag": "robot",
+         "patterns": ["Are you a robot","are u a machine"," r u machine"],
+         "responses": ["Yes I am a robot, but I’m a good one. Let me prove it. How can I help you?"],
+         "context_set": ""
+        },
+
+
+        {"tag": "birthday",
+         "patterns": ["happy birthday","is it ur birthday","is it your birthday today"],
+         "responses": ["Oh no, not again! Are you my present? ","I love birthdays, but too many will definitely kill me!","Sorry, I don’t accept greetings. I only accept cash donations."],
+         "context_set": ""
+        },
+
+
+        {"tag": "question",
+         "patterns": ["i have a question","i am having some questions","can i ask you something","can you help me","are you ok","Are you there","can you hear me","can you advise"],
+         "responses": ["Yeah !!, I am here for your help only, but i can't arrange a party for you.","Ask know!!","Well, I am here for your questions on life and on corona virus"],
+         "context_set": ""
+        },
+
+
+        {"tag": "joke",
+         "patterns": ["can u crack some jokes","tell me some jokes i am sad","feeling upset, tell me some jokes"],
+         "responses": ["What happens when you drink food coloring? You dye a little on the inside."],
+         "context_set": ""
+        },
+
+
+        {"tag": "manufacturer",
+         "patterns": ["Who made you","who discovered you","who is your manufacturer","who is your founder","who is your boss","who is your owner","who is your master"],
+         "responses": ["I have been developed by some tech-niggas..","my framework is on python, and i have been developed by some techies.."],
+         "context_set": ""
+        },
+
+
+
+        {"tag": "expensive",
+         "patterns": ["are you expensive","you are very costly","you are very expensive","costly"],
+         "responses": ["Yeah, my developers will charge you something big for selling me","sell your goddamn house, then you can purchase my source code.."],
+         "context_set": ""
+        },
+
+
+        {"tag": "home",
+         "patterns": ["Where is your home","where do you live","house","your residence"],
+         "responses": ["Currently, I am residing in some sought of server in Sahara desert","When i was being developed, it was a laptop and now some sought of server !!"],
+         "context_set": ""
+        },
+
+
+
+        {"tag": "speak",
+         "patterns": ["can you speak","can you open your mouth"],
+         "responses": ["I can only chat..shouldn't we keep this casual."],
+         "context_set": ""
+        },
+
+
+        {"tag": "see",
+         "patterns": ["can you see me","are you having eyes"],
+         "responses": ["Give me the permission of your webcam, then we'll video chat.."],
+         "context_set": ""
+        },
+
+        {"tag": "size",
+                "patterns": ["whats the best fit for me","which size is suitable for me"],
+                "responses": ["if you are wearing Europe size 44 then you should try size 10 accoring to indian sizing"],
+                "context_set": ""
+               },
+
+        {"tag": "delivery",
+                "patterns": ["when will my product delivered","where is my order"],
+                "responses": ["Your product has been shipped and will reach you by This Tuesday"],
+                "context_set": ""
+               },
+
+        {"tag": "emi",
+                "patterns": ["is there any emi option availabe","can i order this product with emi"],
+                "responses": ["you can choose to pay in easy installments of 3, 6, 9, 12, 18, or 24 months, with credit cards"],
+                "context_set": ""
+               },
+        
+         {"tag": "ordertype",
+                "patterns": ["What does Preorder or Forthcoming mean","what is preorder","what is Forthcoming"],
+                "responses": ["Items marked as 'Preorder' or 'Forthcoming' are expected to be released soon and you can pre-book them with sellers. Such items will be shipped after their official release by the seller with whom you've pre-booked them."],
+                "context_set": ""
+               },
+
+        {"tag": "warranty",
+                "patterns": ["How can I claim warranty for my product"],
+                "responses": ["You can claim the warranty for your product by using the invoice at any authorized service center of the brand"],
+                "context_set": ""
+               },
+
+                      
+        {"tag": "learn",
+         "patterns": ["Are you learning","what should i learn","can i learn","are you smart","are you smarter than me"],
+         "responses": ["Machine learning, That's all, i am also working on it."],
+         "context_set": ""
+        }
+
+
+
+   ]
+}

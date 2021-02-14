@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+	
+    <title>Query Board</title>
+  <link rel="stylesheet" href="/static/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/dashboard/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Enterprise AI</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/query">
+              <span data-feather="file"></span>
+              Query Section
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/market">
+              <span data-feather="shopping-cart"></span>
+              Market Trend
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">
+              <span data-feather="users"></span>
+              Customer Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feedback">
+              <span data-feather="bar-chart-2"></span>
+              Feedback
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="position:relative;">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">AI Bot</h1>
+      </div>
+	  
+  <div class="app">
+    <div class="" style="height:60vh;margin-top:10%;margin-bottom:10%;">
+
+
+      <!-- New Message Sidebar End -->
+
+      <!-- Conversation Start -->
+      <div class="col-sm-12 conversation" style="height:60vh;">
+        <!-- Heading -->
+        <div class="row heading" onmouseover="hs();" onmouseout="hc();">
+          <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+            <div class="heading-avatar-icon">
+              <img src="/static/botanimation.gif">
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-7 heading-name">
+            <a class="heading-name-meta">Enterprise AI
+            </a>
+            <span>Online</span>
+          </div>
+          <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+            <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+          </div>
+        </div>
+        <!-- Heading End -->
+
+        <!-- Message Box -->
+        <div class="row message" id="chatbox" onmouseover="hs();" onmouseout="hc();">
+
+          <div class="row message-previous">
+            <div class="col-sm-12 previous">
+              <br>
+            </div>
+          </div>
+
+          <div class="row message-body">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text">
+                 Hey, Its Enterprise AI bot..!
+                </div>
+                <span class="message-time pull-right">
+                  Genesis
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Message Box End -->
+
+        <!-- Reply Box -->
+        <div class="row reply">
+          <div class="col-sm-1 col-xs-1 reply-emojis">
+            <i class="fa fa-smile-o fa-2x"></i>
+          </div>
+          <div class="col-sm-9 col-xs-9 reply-main">
+            <textarea class="form-control" rows="1" id="textInput"></textarea>
+          </div>
+          <div class="col-sm-1 col-xs-1 reply-recording">
+			<img src="/static/popup.png" id="popup" style="position:fixed;bottom:10%;right:20%;width:12%;">
+            <i class="fa fa-microphone fa-2x" aria-hidden="true" onclick="audioinput();"></i>
+          </div>
+          <div class="col-sm-1 col-xs-1 reply-send">
+            <i class="fa fa-send fa-2x" aria-hidden="true" onclick="getResponse();"></i>
+          </div>
+        </div>
+        <!-- Reply Box End -->
+      </div>
+      <!-- Conversation End -->
+    </div>
+    <!-- App One End -->
+  </div>
+
+<script>
+	var popupid = document.getElementById('popup');
+	popupid.style.visibility='hidden';
+	
+    function getResponse() {
+		popup.style.visibility="hidden";
+        let userText = $("#textInput").val();
+        let userHtml = '<div class="row message-body"><div class="col-sm-12"><div class="sender"><div class="message-text">' + userText + '</div><span class="message-time pull-right">You</span></div></div>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        $.get("/get", { msg: userText }).done(function(data) {
+        var botHtml = '<div class="row message-body"><div class="col-sm-12 message-main-receiver"><div class="receiver"><div class="message-text">' + data + '</div><span class="message-time pull-right">BOT</span></div></div></div>';
+        $("#chatbox").append(botHtml);
+		});
+	}
+		
+	function audioinput()  {
+		popup.style.visibility="visible";
+		$.get("/audio", {}).done(function(data){
+		getResponseviaaudio(data);		
+		});
+	}
+	
+	function getResponseviaaudio(usertxt) {
+        let userText = usertxt;
+        let userHtml = '<div class="row message-body"><div class="col-sm-12"><div class="sender"><div class="message-text">' + userText + '</div><span class="message-time pull-right">You</span></div></div>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        $.get("/get", { msg: userText }).done(function(data) {
+        var botHtml = '<div class="row message-body"><div class="col-sm-12 message-main-receiver"><div class="receiver"><div class="message-text">' + data + '</div><span class="message-time pull-right">BOT</span></div></div></div>';
+        $("#chatbox").append(botHtml);
+		});
+	}
+	
+    $("#textInput").keypress(function(e) {
+    //if enter key is pressed
+        if(e.which == 13) {
+            clicck();
+			allow=1;
+            getResponse();
+        }
+    });
+    $("#buttonInput").click(function() {
+        clicck();
+        getResponse();
+    });
+	
+
+var allow=1;
+function clicck()
+{
+if(allow == 1)
+{
+  var elem = document.getElementById('chatbox');
+  elem.scrollTop = elem.scrollHeight;
+}
+}
+window.setInterval(function(){clicck();},0);
+function hs()
+{
+allow=0;
+}
+function hc()
+{
+allow=1;
+}
+</script>
+      
+    </main>
+  </div>
+</div>
+
+
+    <script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous"></script><script src="/static/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+#textInput {
+    border: none;
+    border-bottom: 3px solid rgb(199, 221, 221);
+}
+.userText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+    display:inline-block;
+    min-width:10px;
+    background-color: #02c512;
+    border-radius: 10px;
+    padding:10px;
+}
+.userText span {
+    max-width: 80%;
+    padding: 10px;
+}
+.botText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+    background-color: rgb(230, 0, 76);
+    border-radius: 10px;
+    display:inline-block;
+    min-width:10px;
+    padding:10px;
+}
+.botText span {
+    max-width: 80%;
+}
+@font-face{
+    font-family: headingfont;
+    src: url(auto.ttf);
+}
+.uparr
+{
+	background-image: url(up.png);
+	background-position:center;
+	background-size: contain;
+	background-repeat:no-repeat;
+}
+.dwarr
+{
+	background-image: url(down.png);
+	background-position:center;
+	background-size: contain;
+	background-repeat:no-repeat;
+}
+.larr
+{
+	background-image: url(left.png);
+	background-position:center;
+	background-size: contain;
+	background-repeat:no-repeat;
+}
+.rarr
+{
+	background-image: url(right.png);
+	background-position:center;
+	background-size: contain;
+	background-repeat:no-repeat;
+}
+
+body{
+background: linear-gradient(322deg, #7eefff, #ffffff, #f1ceff);
+background-size: 600% 600%;
+-webkit-animation: AnimationName 13s ease infinite;
+-moz-animation: AnimationName 13s ease infinite;
+animation: AnimationName 13s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}

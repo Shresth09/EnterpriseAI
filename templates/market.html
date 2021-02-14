@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>Market Trend</title>
+    
+    <!-- Bootstrap core CSS -->
+	<link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	.traffic-chart {
+		min-height: 335px;
+	}
+	#flotPie1  {
+		height: 150px;
+	}
+	#flotPie1 td {
+		padding:3px;
+	}
+	#flotPie1 table {
+		top: 20px!important;
+		right: -10px!important;
+	}
+	#cellPaiChart{
+		height: 160px;
+	}
+    </style>
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/dashboard.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+	
+  </head>
+  <body>
+    
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Enterprise AI</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/query">
+              <span data-feather="file"></span>
+              Query Section
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/market">
+              <span data-feather="shopping-cart"></span>
+              Market Trend
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">
+              <span data-feather="users"></span>
+              Customer Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feedback">
+              <span data-feather="bar-chart-2"></span>
+              Feedback
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Market Trend</h1>
+      </div>
+      <h2>Age Group</h2>
+      <div class="table-responsive">
+        <div id="traffic-chart" class="traffic-chart"></div>
+      </div>
+      <h2>Sessional Usage</h2>
+      <div class="table-responsive">
+        <div id="traffic-chart2" class="traffic-chart"></div>
+      </div>
+      <div class="table-responsive">
+		<div id="cellPaiChart" class="float-chart"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+    <!--  Chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+
+    <!--Chartist Chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+
+<script>
+		jQuery(document).ready(function($) {
+            "use strict";
+            // Line Chart  #flotLine5 End
+            // Traffic Chart using chartist
+            if ($('#traffic-chart').length) {
+                var chart = new Chartist.Line('#traffic-chart', {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  series: [
+                  [{% for item in data[0] %}{{item}},{% endfor %}],
+                  [{% for item in data[1] %}{{item}},{% endfor %}],
+                  [{% for item in data[2] %}{{item}},{% endfor %}]
+                  ]
+              }, {
+                  low: 0,
+                  showArea: true,
+                  showLine: true,
+                  showPoint: true,
+                  fullWidth: true,
+                  axisX: {
+                    showGrid: true
+                }
+            });
+
+                chart.on('draw', function(data) {
+                    if(data.type === 'line' || data.type === 'area') {
+                        data.element.animate({
+                            d: {
+                                begin: 2000 * data.index,
+                                dur: 2000,
+                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                to: data.path.clone().stringify(),
+                                easing: Chartist.Svg.Easing.easeOutQuint
+                            }
+                        });
+                    }
+                });
+            }
+            // Line Chart  #flotLine5 End
+            // Traffic Chart using chartist
+            if ($('#traffic-chart2').length) {
+                var chart = new Chartist.Line('#traffic-chart2', {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  series: [
+                  [{% for item in data[3] %}{{item}},{% endfor %}],
+                  [{% for item in data[4] %}{{item}},{% endfor %}],
+                  [{% for item in data[5] %}{{item}},{% endfor %}]
+                  ]
+              }, {
+                  low: 0,
+                  showArea: true,
+                  showLine: true,
+                  showPoint: true,
+                  fullWidth: true,
+                  axisX: {
+                    showGrid: true
+                }
+            });
+
+                chart.on('draw', function(data) {
+                    if(data.type === 'line' || data.type === 'area') {
+                        data.element.animate({
+                            d: {
+                                begin: 2000 * data.index,
+                                dur: 2000,
+                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                to: data.path.clone().stringify(),
+                                easing: Chartist.Svg.Easing.easeOutQuint
+                            }
+                        });
+                    }
+                });
+            }
+            // Bar Chart #flotBarChart End
+            // cellPaiChart
+            var cellPaiChart = [
+                { label: "Quality ", data: [[1,30]], color: '#F05B4F'},
+                { label: "Design ", data: [[1,12]], color: '#F4C63D'},
+                { label: "Comfort ", data: [[1,34]], color: '#5b83de'},
+                { label: "Affordability", data: [[1,24]], color: '#00bfa5'}
+            ];
+            $.plot('#cellPaiChart', cellPaiChart, {
+                series: {
+                    pie: {
+                        show: true,
+                        stroke: {
+                            width: 0
+                        }
+                    }
+                },
+                legend: {
+                    show: false
+                },grid: {
+                    hoverable: true,
+                    clickable: true
+                }
+
+            });
+            // cellPaiChart End
+        });
+</script>
+
+
+    <script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous"></script><script src="/static/dashboard.js"></script>
+  </body>
+</html>
